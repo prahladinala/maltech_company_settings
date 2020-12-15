@@ -1,0 +1,965 @@
+<!-- CSS Files -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/atlantis.min.css">
+<link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link href="css/intlTelInput.css" rel="stylesheet" />
+
+<link href="css/timetracker.css" rel="stylesheet" />
+<!-- CSS Just for demo purpose, don't include it in your project -->
+<link rel="stylesheet" href="/css/demo.css">
+<link rel="stylesheet" href="/css/companysettings.css">
+<div class="content">
+    <div class="page-inner">
+        <div class="page-header">
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex align-items-center">
+                            <h4 class="card-title">Company Setting</h4>
+                            <button id="addNewWorkCategoryButton" class="btn btn-primary btn-round ml-auto"
+                                data-toggle="modal" data-target="#addWorkCategoryModal">
+                                <i class="fa fa-plus"></i>
+                                Add work category
+                            </button>
+                        </div>
+                    </div>
+                    <!--begin::Card-->
+
+                    <div class="card-body p-0">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <ul class="nav nav-tabs justify-content-center settingtab border-0 mt-3" id="myTab"
+                                    role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link non_active active border-0" id="home-tab" data-toggle="tab"
+                                            href="#home" role="tab" aria-controls="home"
+                                            aria-selected="true">Profile</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link non_active border-0" id="profile-tab" data-toggle="tab"
+                                            href="#profile" role="tab" aria-controls="profile"
+                                            aria-selected="false">Account</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link non_active border-0" id="contact-tab" data-toggle="tab"
+                                            href="#contact" role="tab" aria-controls="contact"
+                                            aria-selected="false">Address</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link non_active border-0" id="submit-tab" data-toggle="tab"
+                                            href="#submit" role="tab" aria-controls="contact" aria-selected="false">
+                                            Submission
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <!--begin::Wizard Step 1-->
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-9">
+                                        <div class="my-5 step" data-wizard-type="step-content"
+                                            data-wizard-state="current">
+                                            <h5 class="text-dark font-weight-bold mb-10">
+                                                Company Settings:
+                                            </h5>
+                                            <!--begin::Group-->
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label text-left">Company
+                                                    Logo</label>
+                                                <div class="col-lg-9 col-xl-9">
+                                                    <div class="image-input image-input-outline"
+                                                        id="kt_user_add_avatar">
+                                                        <div class="image-input-wrapper"
+                                                            style="background-image: url(assets/media/users/100_6.jpg)">
+                                                        </div>
+                                                        <label
+                                                            class="btn btn-xs btn-icon rounded-circle edit-icon btn-white btn-hover-text-primary btn-shadow"
+                                                            data-action="change" data-toggle="tooltip" title=""
+                                                            data-original-title="Change avatar">
+                                                            <i class="fa fa-pen icon-sm text-muted"></i>
+                                                            <input class="inputfile" type="file" name="profile_avatar"
+                                                                accept=".png, .jpg, .jpeg" />
+                                                            <input type="hidden" name="profile_avatar_remove" />
+                                                        </label>
+                                                        <span
+                                                            class="btn btn-xs btn-icon btn-circle btnclose btn-white btn-hover-text-primary btn-shadow removeicons"
+                                                            data-action="cancel" data-toggle="tooltip"
+                                                            title="Cancel avatar">
+                                                            <i class="fa fa-times text-muted">
+                                                            </i>
+                                                        </span>
+                                                    </div>
+                                                    <small class="form-text text-muted">
+                                                        Logo format should be png or svg and size should
+                                                        be less than 200kb.
+                                                    </small>
+                                                </div>
+                                            </div>
+                                            <!--end::Group-->
+                                            <!--begin::Group-->
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Company
+                                                    Name</label>
+                                                <div class="col-lg-9 col-xl-9">
+                                                    <input class="form-control form-control-solid" id="company_name"
+                                                        name="companyname" type="text" value="" />
+                                                    <small class="form-text text-muted">
+                                                        If you want your invoices addressed to a
+                                                        company.
+                                                        Leave blank to use your full name.
+                                                    </small>
+                                                </div>
+                                            </div>
+                                            <!--end::Group-->
+                                            <!--begin::Group-->
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">First
+                                                    Name</label>
+                                                <div class="col-lg-9 col-xl-9">
+                                                    <input class="form-control form-control-solid" id="first_name"
+                                                        name="firstname" type="text" value="" />
+                                                </div>
+                                            </div>
+                                            <!--end::Group-->
+                                            <!--begin::Group-->
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Last
+                                                    Name</label>
+                                                <div class="col-lg-9 col-xl-9">
+                                                    <input class="form-control form-control-solid" id="last_name"
+                                                        name="lastname" type="text" value="" />
+                                                </div>
+                                            </div>
+                                            <!--end::Group-->
+                                            <!--begin::Group-->
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Email
+                                                    Address</label>
+                                                <div class="col-lg-9 col-xl-9">
+
+
+                                                    <input type="text" class="form-control form-control-solid"
+                                                        id="email_addr" name="email" value="" />
+
+                                                </div>
+                                            </div>
+                                            <!--end::Group-->
+                                            <!--begin::Group-->
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Contact
+                                                    Phone</label>
+                                                <div class="col-lg-9 col-xl-9">
+
+
+                                                    <input type="text" class="form-control form-control-solid"
+                                                        id="phone_num" name="phone" value="" placeholder="Phone" />
+                                                    <span class="form-text text-muted">Enter valid
+                                                        phone number(e.g: 5678967456).</span>
+                                                </div>
+                                            </div>
+                                            <!--end::Group-->
+                                            <!--begin::Group-->
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Company
+                                                    Site</label>
+                                                <div class="col-lg-9 col-xl-9">
+
+                                                    <input type="text" class="form-control form-control-solid"
+                                                        id="company_site" name="companywebsite" placeholder=""
+                                                        value="" />
+
+                                                </div>
+                                            </div>
+                                            <!--end::Group-->
+                                            <button onclick="profileValidator()" class="btn btn-primary">Next
+                                                Step</button>
+
+                                        </div>
+                                    </div>
+                                    <!--end::Wizard Step 1-->
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <!--begin::Wizard Step 2-->
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-9">
+                                        <div class="my-5 step" data-wizard-type="step-content">
+                                            <h5 class="text-dark font-weight-bold mb-10 mt-5">
+                                                Display Format
+                                            </h5>
+                                            <!--begin::Group-->
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-xl-3 col-lg-3">Time
+                                                    Zone</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <select class="form-control form-control-solid" id="time_zone"
+                                                        name="timezone">
+                                                        <option data-offset="-39600"
+                                                            value="International Date Line West">
+                                                            (GMT-11:00) International Date Line West
+                                                        </option>
+                                                        <option data-offset="-39600" value="Midway Island">(GMT-11:00)
+                                                            Midway
+                                                            Island</option>
+                                                        <option data-offset="-39600" value="Samoa">
+                                                            (GMT-11:00) Samoa</option>
+                                                        <option data-offset="-36000" value="Hawaii">
+                                                            (GMT-10:00) Hawaii</option>
+                                                        <option data-offset="-28800" value="Alaska">
+                                                            (GMT-08:00) Alaska</option>
+                                                        <option data-offset="-25200"
+                                                            value="Pacific Time (US &amp;amp; Canada)">
+                                                            (GMT-07:00) Pacific Time (US &amp; Canada)
+                                                        </option>
+                                                        <option data-offset="-25200" value="Tijuana">
+                                                            (GMT-07:00) Tijuana</option>
+                                                        <option data-offset="-25200" value="Arizona">
+                                                            (GMT-07:00) Arizona</option>
+                                                        <option data-offset="-21600"
+                                                            value="Mountain Time (US &amp;amp; Canada)">
+                                                            (GMT-06:00) Mountain Time (US &amp; Canada)
+                                                        </option>
+                                                        <option data-offset="-21600" value="Chihuahua">
+                                                            (GMT-06:00) Chihuahua</option>
+                                                        <option data-offset="-21600" value="Mazatlan">
+                                                            (GMT-06:00) Mazatlan</option>
+                                                        <option data-offset="-21600" value="Saskatchewan">(GMT-06:00)
+                                                            Saskatchewan</option>
+                                                        <option data-offset="-21600" value="Central America">(GMT-06:00)
+                                                            Central
+                                                            America</option>
+                                                        <option data-offset="-18000"
+                                                            value="Central Time (US &amp;amp; Canada)">
+                                                            (GMT-05:00) Central Time (US &amp; Canada)
+                                                        </option>
+                                                        <option data-offset="-18000" value="Guadalajara">(GMT-05:00)
+                                                            Guadalajara
+                                                        </option>
+                                                        <option data-offset="-18000" value="Mexico City">(GMT-05:00)
+                                                            Mexico City
+                                                        </option>
+                                                        <option data-offset="-18000" value="Monterrey">
+                                                            (GMT-05:00) Monterrey</option>
+                                                        <option data-offset="-18000" value="Bogota">
+                                                            (GMT-05:00) Bogota</option>
+                                                        <option data-offset="-18000" value="Lima">
+                                                            (GMT-05:00) Lima</option>
+                                                        <option data-offset="-18000" value="Quito">
+                                                            (GMT-05:00) Quito</option>
+                                                        <option data-offset="-14400"
+                                                            value="Eastern Time (US &amp;amp; Canada)">
+                                                            (GMT-04:00) Eastern Time (US &amp; Canada)
+                                                        </option>
+                                                        <option data-offset="-14400" value="Indiana (East)">(GMT-04:00)
+                                                            Indiana
+                                                            (East)</option>
+                                                        <option data-offset="-14400" value="Caracas">
+                                                            (GMT-04:00) Caracas</option>
+                                                        <option data-offset="-14400" value="La Paz">
+                                                            (GMT-04:00) La Paz</option>
+                                                        <option data-offset="-14400" value="Georgetown">
+                                                            (GMT-04:00) Georgetown</option>
+                                                        <option data-offset="-10800" value="Atlantic Time (Canada)">
+                                                            (GMT-03:00)
+                                                            Atlantic Time (Canada)</option>
+                                                        <option data-offset="-10800" value="Santiago">
+                                                            (GMT-03:00) Santiago</option>
+                                                        <option data-offset="-10800" value="Brasilia">
+                                                            (GMT-03:00) Brasilia</option>
+                                                        <option data-offset="-10800" value="Buenos Aires">(GMT-03:00)
+                                                            Buenos
+                                                            Aires</option>
+                                                        <option data-offset="-9000" value="Newfoundland">(GMT-02:30)
+                                                            Newfoundland</option>
+                                                        <option data-offset="-7200" value="Greenland">
+                                                            (GMT-02:00) Greenland</option>
+                                                        <option data-offset="-7200" value="Mid-Atlantic">(GMT-02:00)
+                                                            Mid-Atlantic</option>
+                                                        <option data-offset="-3600" value="Cape Verde Is.">(GMT-01:00)
+                                                            Cape
+                                                            Verde Is.</option>
+                                                        <option data-offset="0" value="Azores">(GMT)
+                                                            Azores</option>
+                                                        <option data-offset="0" value="Monrovia">(GMT)
+                                                            Monrovia</option>
+                                                        <option data-offset="0" value="UTC">(GMT) UTC
+                                                        </option>
+                                                        <option data-offset="3600" value="Dublin">
+                                                            (GMT+01:00) Dublin</option>
+                                                        <option data-offset="3600" value="Edinburgh">
+                                                            (GMT+01:00) Edinburgh</option>
+                                                        <option data-offset="3600" value="Lisbon">
+                                                            (GMT+01:00) Lisbon</option>
+                                                        <option data-offset="3600" value="London">
+                                                            (GMT+01:00) London</option>
+                                                        <option data-offset="3600" value="Casablanca">
+                                                            (GMT+01:00) Casablanca</option>
+                                                        <option data-offset="3600" value="West Central Africa">
+                                                            (GMT+01:00) West
+                                                            Central Africa</option>
+                                                        <option data-offset="7200" value="Belgrade">
+                                                            (GMT+02:00) Belgrade</option>
+                                                        <option data-offset="7200" value="Bratislava">
+                                                            (GMT+02:00) Bratislava</option>
+                                                        <option data-offset="7200" value="Budapest">
+                                                            (GMT+02:00) Budapest</option>
+                                                        <option data-offset="7200" value="Ljubljana">
+                                                            (GMT+02:00) Ljubljana</option>
+                                                        <option data-offset="7200" value="Prague">
+                                                            (GMT+02:00) Prague</option>
+                                                        <option data-offset="7200" value="Sarajevo">
+                                                            (GMT+02:00) Sarajevo</option>
+                                                        <option data-offset="7200" value="Skopje">
+                                                            (GMT+02:00) Skopje</option>
+                                                        <option data-offset="7200" value="Warsaw">
+                                                            (GMT+02:00) Warsaw</option>
+                                                        <option data-offset="7200" value="Zagreb">
+                                                            (GMT+02:00) Zagreb</option>
+                                                        <option data-offset="7200" value="Brussels">
+                                                            (GMT+02:00) Brussels</option>
+                                                        <option data-offset="7200" value="Copenhagen">
+                                                            (GMT+02:00) Copenhagen</option>
+                                                        <option data-offset="7200" value="Madrid">
+                                                            (GMT+02:00) Madrid</option>
+                                                        <option data-offset="7200" value="Paris">
+                                                            (GMT+02:00) Paris</option>
+                                                        <option data-offset="7200" value="Amsterdam">
+                                                            (GMT+02:00) Amsterdam</option>
+                                                        <option data-offset="7200" value="Berlin">
+                                                            (GMT+02:00) Berlin</option>
+                                                        <option data-offset="7200" value="Bern">
+                                                            (GMT+02:00) Bern</option>
+                                                        <option data-offset="7200" value="Rome">
+                                                            (GMT+02:00) Rome</option>
+                                                        <option data-offset="7200" value="Stockholm">
+                                                            (GMT+02:00) Stockholm</option>
+                                                        <option data-offset="7200" value="Vienna">
+                                                            (GMT+02:00) Vienna</option>
+                                                        <option data-offset="7200" value="Cairo">
+                                                            (GMT+02:00) Cairo</option>
+                                                        <option data-offset="7200" value="Harare">
+                                                            (GMT+02:00) Harare</option>
+                                                        <option data-offset="7200" value="Pretoria">
+                                                            (GMT+02:00) Pretoria</option>
+                                                        <option data-offset="10800" value="Bucharest">
+                                                            (GMT+03:00) Bucharest</option>
+                                                        <option data-offset="10800" value="Helsinki">
+                                                            (GMT+03:00) Helsinki</option>
+                                                        <option data-offset="10800" value="Kiev">
+                                                            (GMT+03:00) Kiev</option>
+                                                        <option data-offset="10800" value="Kyiv">
+                                                            (GMT+03:00) Kyiv</option>
+                                                        <option data-offset="10800" value="Riga">
+                                                            (GMT+03:00) Riga</option>
+                                                        <option data-offset="10800" value="Sofia">
+                                                            (GMT+03:00) Sofia</option>
+                                                        <option data-offset="10800" value="Tallinn">
+                                                            (GMT+03:00) Tallinn</option>
+                                                        <option data-offset="10800" value="Vilnius">
+                                                            (GMT+03:00) Vilnius</option>
+                                                        <option data-offset="10800" value="Athens">
+                                                            (GMT+03:00) Athens</option>
+                                                        <option data-offset="10800" value="Istanbul">
+                                                            (GMT+03:00) Istanbul</option>
+                                                        <option data-offset="10800" value="Minsk">
+                                                            (GMT+03:00) Minsk</option>
+                                                        <option data-offset="10800" value="Jerusalem">
+                                                            (GMT+03:00) Jerusalem</option>
+                                                        <option data-offset="10800" value="Moscow">
+                                                            (GMT+03:00) Moscow</option>
+                                                        <option data-offset="10800" value="St. Petersburg">(GMT+03:00)
+                                                            St.
+                                                            Petersburg</option>
+                                                        <option data-offset="10800" value="Volgograd">
+                                                            (GMT+03:00) Volgograd</option>
+                                                        <option data-offset="10800" value="Kuwait">
+                                                            (GMT+03:00) Kuwait</option>
+                                                        <option data-offset="10800" value="Riyadh">
+                                                            (GMT+03:00) Riyadh</option>
+                                                        <option data-offset="10800" value="Nairobi">
+                                                            (GMT+03:00) Nairobi</option>
+                                                        <option data-offset="10800" value="Baghdad">
+                                                            (GMT+03:00) Baghdad</option>
+                                                        <option data-offset="14400" value="Abu Dhabi">
+                                                            (GMT+04:00) Abu Dhabi</option>
+                                                        <option data-offset="14400" value="Muscat">
+                                                            (GMT+04:00) Muscat</option>
+                                                        <option data-offset="14400" value="Baku">
+                                                            (GMT+04:00) Baku</option>
+                                                        <option data-offset="14400" value="Tbilisi">
+                                                            (GMT+04:00) Tbilisi</option>
+                                                        <option data-offset="14400" value="Yerevan">
+                                                            (GMT+04:00) Yerevan</option>
+                                                        <option data-offset="16200" value="Tehran">
+                                                            (GMT+04:30) Tehran</option>
+                                                        <option data-offset="16200" value="Kabul">
+                                                            (GMT+04:30) Kabul</option>
+                                                        <option data-offset="18000" value="Ekaterinburg">(GMT+05:00)
+                                                            Ekaterinburg</option>
+                                                        <option data-offset="18000" value="Islamabad">
+                                                            (GMT+05:00) Islamabad</option>
+                                                        <option data-offset="18000" value="Karachi">
+                                                            (GMT+05:00) Karachi</option>
+                                                        <option data-offset="18000" value="Tashkent">
+                                                            (GMT+05:00) Tashkent</option>
+                                                        <option data-offset="19800" value="Chennai">
+                                                            (GMT+05:30) Chennai</option>
+                                                        <option data-offset="19800" value="Kolkata">
+                                                            (GMT+05:30) Kolkata</option>
+                                                        <option data-offset="19800" value="Mumbai">
+                                                            (GMT+05:30) Mumbai</option>
+                                                        <option data-offset="19800" value="New Delhi">
+                                                            (GMT+05:30) New Delhi</option>
+                                                        <option data-offset="19800" value="Sri Jayawardenepura">
+                                                            (GMT+05:30) Sri
+                                                            Jayawardenepura</option>
+                                                        <option data-offset="20700" value="Kathmandu">
+                                                            (GMT+05:45) Kathmandu</option>
+                                                        <option data-offset="21600" value="Astana">
+                                                            (GMT+06:00) Astana</option>
+                                                        <option data-offset="21600" value="Dhaka">
+                                                            (GMT+06:00) Dhaka</option>
+                                                        <option data-offset="21600" value="Almaty">
+                                                            (GMT+06:00) Almaty</option>
+                                                        <option data-offset="21600" value="Urumqi">
+                                                            (GMT+06:00) Urumqi</option>
+                                                        <option data-offset="23400" value="Rangoon">
+                                                            (GMT+06:30) Rangoon</option>
+                                                        <option data-offset="25200" value="Novosibirsk">
+                                                            (GMT+07:00) Novosibirsk</option>
+                                                        <option data-offset="25200" value="Bangkok">
+                                                            (GMT+07:00) Bangkok</option>
+                                                        <option data-offset="25200" value="Hanoi">
+                                                            (GMT+07:00) Hanoi</option>
+                                                        <option data-offset="25200" value="Jakarta">
+                                                            (GMT+07:00) Jakarta</option>
+                                                        <option data-offset="25200" value="Krasnoyarsk">
+                                                            (GMT+07:00) Krasnoyarsk</option>
+                                                        <option data-offset="28800" value="Beijing">
+                                                            (GMT+08:00) Beijing</option>
+                                                        <option data-offset="28800" value="Chongqing">
+                                                            (GMT+08:00) Chongqing</option>
+                                                        <option data-offset="28800" value="Hong Kong">
+                                                            (GMT+08:00) Hong Kong</option>
+                                                        <option data-offset="28800" value="Kuala Lumpur">(GMT+08:00)
+                                                            Kuala
+                                                            Lumpur</option>
+                                                        <option data-offset="28800" value="Singapore">
+                                                            (GMT+08:00) Singapore</option>
+                                                        <option data-offset="28800" value="Taipei">
+                                                            (GMT+08:00) Taipei</option>
+                                                        <option data-offset="28800" value="Perth">
+                                                            (GMT+08:00) Perth</option>
+                                                        <option data-offset="28800" value="Irkutsk">
+                                                            (GMT+08:00) Irkutsk</option>
+                                                        <option data-offset="28800" value="Ulaan Bataar">(GMT+08:00)
+                                                            Ulaan
+                                                            Bataar</option>
+                                                        <option data-offset="32400" value="Seoul">
+                                                            (GMT+09:00) Seoul</option>
+                                                        <option data-offset="32400" value="Osaka">
+                                                            (GMT+09:00) Osaka</option>
+                                                        <option data-offset="32400" value="Sapporo">
+                                                            (GMT+09:00) Sapporo</option>
+                                                        <option data-offset="32400" value="Tokyo">
+                                                            (GMT+09:00) Tokyo</option>
+                                                        <option data-offset="32400" value="Yakutsk">
+                                                            (GMT+09:00) Yakutsk</option>
+                                                        <option data-offset="34200" value="Darwin">
+                                                            (GMT+09:30) Darwin</option>
+                                                        <option data-offset="34200" value="Adelaide">
+                                                            (GMT+09:30) Adelaide</option>
+                                                        <option data-offset="36000" value="Canberra">
+                                                            (GMT+10:00) Canberra</option>
+                                                        <option data-offset="36000" value="Melbourne">
+                                                            (GMT+10:00) Melbourne</option>
+                                                        <option data-offset="36000" value="Sydney">
+                                                            (GMT+10:00) Sydney</option>
+                                                        <option data-offset="36000" value="Brisbane">
+                                                            (GMT+10:00) Brisbane</option>
+                                                        <option data-offset="36000" value="Hobart">
+                                                            (GMT+10:00) Hobart</option>
+                                                        <option data-offset="36000" value="Vladivostok">
+                                                            (GMT+10:00) Vladivostok</option>
+                                                        <option data-offset="36000" value="Guam">
+                                                            (GMT+10:00) Guam</option>
+                                                        <option data-offset="36000" value="Port Moresby">(GMT+10:00)
+                                                            Port
+                                                            Moresby</option>
+                                                        <option data-offset="36000" value="Solomon Is.">
+                                                            (GMT+10:00) Solomon Is.</option>
+                                                        <option data-offset="39600" value="Magadan">
+                                                            (GMT+11:00) Magadan</option>
+                                                        <option data-offset="39600" value="New Caledonia">(GMT+11:00)
+                                                            New
+                                                            Caledonia</option>
+                                                        <option data-offset="43200" value="Fiji">
+                                                            (GMT+12:00) Fiji</option>
+                                                        <option data-offset="43200" value="Kamchatka">
+                                                            (GMT+12:00) Kamchatka</option>
+                                                        <option data-offset="43200" value="Marshall Is.">(GMT+12:00)
+                                                            Marshall
+                                                            Is.</option>
+                                                        <option data-offset="43200" value="Auckland">
+                                                            (GMT+12:00) Auckland</option>
+                                                        <option data-offset="43200" value="Wellington">
+                                                            (GMT+12:00) Wellington</option>
+                                                        <option data-offset="46800" value="Nuku&#x27;alofa">(GMT+13:00)
+                                                            Nuku'alofa</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--end::Group-->
+                                            <!--begin::Group-->
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-xl-3 col-lg-3">Language</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <select class="form-control form-control-solid" id="sel_lang"
+                                                        name="language">
+                                                        <option value="">Select Language...</option>
+                                                        <option value="id">Bahasa Indonesia - Indonesian
+                                                        </option>
+                                                        <option value="msa">Bahasa Melayu - Malay
+                                                        </option>
+                                                        <option value="ca">Català - Catalan</option>
+                                                        <option value="cs">Čeština - Czech</option>
+                                                        <option value="da">Dansk - Danish</option>
+                                                        <option value="de">Deutsch - German</option>
+                                                        <option value="en" selected="selected">English
+                                                        </option>
+                                                        <option value="en-gb">English UK - British
+                                                            English</option>
+                                                        <option value="es">Español - Spanish</option>
+                                                        <option value="eu">Euskara - Basque (beta)
+                                                        </option>
+                                                        <option value="fil">Filipino</option>
+                                                        <option value="fr">Français - French</option>
+                                                        <option value="ga">Gaeilge - Irish (beta)
+                                                        </option>
+                                                        <option value="gl">Galego - Galician (beta)
+                                                        </option>
+                                                        <option value="hr">Hrvatski - Croatian</option>
+                                                        <option value="it">Italiano - Italian</option>
+                                                        <option value="hu">Magyar - Hungarian</option>
+                                                        <option value="nl">Nederlands - Dutch</option>
+                                                        <option value="no">Norsk - Norwegian</option>
+                                                        <option value="pl">Polski - Polish</option>
+                                                        <option value="pt">Português - Portuguese
+                                                        </option>
+                                                        <option value="ro">Română - Romanian</option>
+                                                        <option value="sk">Slovenčina - Slovak</option>
+                                                        <option value="fi">Suomi - Finnish</option>
+                                                        <option value="sv">Svenska - Swedish</option>
+                                                        <option value="vi">Tiếng Việt - Vietnamese
+                                                        </option>
+                                                        <option value="tr">Türkçe - Turkish</option>
+                                                        <option value="el">Ελληνικά - Greek</option>
+                                                        <option value="bg">Български език - Bulgarian
+                                                        </option>
+                                                        <option value="ru">Русский - Russian</option>
+                                                        <option value="sr">Српски - Serbian</option>
+                                                        <option value="uk">Українська мова - Ukrainian
+                                                        </option>
+                                                        <option value="he">עִבְרִית - Hebrew</option>
+                                                        <option value="ur">اردو - Urdu (beta)</option>
+                                                        <option value="ar">العربية - Arabic</option>
+                                                        <option value="fa">فارسی - Persian</option>
+                                                        <option value="mr">मराठी - Marathi</option>
+                                                        <option value="hi">हिन्दी - Hindi</option>
+                                                        <option value="bn">বাংলা - Bangla</option>
+                                                        <option value="gu">ગુજરાતી - Gujarati</option>
+                                                        <option value="ta">தமிழ் - Tamil</option>
+                                                        <option value="kn">ಕನ್ನಡ - Kannada</option>
+                                                        <option value="th">ภาษาไทย - Thai</option>
+                                                        <option value="ko">한국어 - Korean</option>
+                                                        <option value="ja">日本語 - Japanese</option>
+                                                        <option value="zh-cn">简体中文 - Simplified Chinese
+                                                        </option>
+                                                        <option value="zh-tw">繁體中文 - Traditional Chinese
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--end::Group-->
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-xl-3 col-lg-3">Date</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <select class="form-control form-control-solid" id="sel_date"
+                                                        id="exampleSelectl">
+                                                        <option value="1">Month / Day / Year (e.g.
+                                                            12/6/2020)</option>
+                                                        <option value="2">Day / Month / Year (e.g.
+                                                            6/12/2020)</option>
+                                                        <option value="3">Year / Month / Day (e.g.
+                                                            2020/12/6)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-xl-3 col-lg-3">Time
+                                                    Totals</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <select class="form-control form-control-solid" id="sel_time"
+                                                        id="Select1">
+                                                        <option value="1">Hours and Minutes (e.g. 8:30)
+                                                        </option>
+                                                        <option value="2">Decimal Hours (e.g. 8.50)
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-xl-3 col-lg-3">Currency</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <select class="form-control form-control-solid" id="sel_currency"
+                                                        id="Select2 ">
+                                                        <option value="1">$ (US Dollar)</option>
+                                                        <option value="2">$ (Canadian Dollar)</option>
+                                                        <option value="3">$ (Australian Dollar)</option>
+                                                        <option value="4">£ (British Pound)</option>
+                                                        <option value="5">€ (Euro)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="separator separator-dashed my-10"></div>
+                                            <h5 class="text-dark font-weight-bold my-4">
+                                                Pay Period, Timesheet Approvals, Time Off
+                                            </h5>
+                                            <!--begin::Group-->
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-xl-3 col-lg-3">Start
+                                                    Day of Week</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <select class="form-control form-control-solid" id="sel_week"
+                                                        id="Select3 ">
+                                                        <option value="1">Sunday</option>
+                                                        <option value="2">Monday</option>
+                                                        <option value="3">Tuesday</option>
+                                                        <option value="4">Wednesday</option>
+                                                        <option value="5">Thursday</option>
+                                                        <option value="6">Friday</option>
+                                                        <option value="7">Saturday</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--end::Group-->
+                                            <!--begin::Group-->
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-xl-3 col-lg-3">Pay
+                                                    Period</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <select class="form-control form-control-solid" id="sel_period"
+                                                        id="Select4 ">
+                                                        <option value="1">N/A</option>
+                                                        <option value="2">Weekly</option>
+                                                        <option value="3">Bi-Weekly (e.g. Sunday,
+                                                            December 6th - Saturday, December 19th)
+                                                        </option>
+                                                        <option value="4">Bi-Weekly (e.g. Sunday,
+                                                            November 29th - Saturday, December 12th)
+                                                        </option>
+                                                        <option value="5">Monthly</option>
+                                                        <option value="6">Semi-Monthly (1st - 15th &amp;
+                                                            16th - End of Month)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--end::Group-->
+                                            <div class="form-group row fv-plugins-icon-container">
+                                                <label class="col-form-label col-xl-3 col-lg-3">Approvals</label>
+                                                <div class="col-xl-9 col-lg-9 col-form-label">
+                                                    <div class="checkbox-inline">
+                                                        <label class="checkbox">
+                                                            <input name="communication" type="checkbox">
+                                                            <span></span>Enable Timesheet Approvals
+                                                        </label>
+                                                        <label class="checkbox ml-md-3">
+                                                            <input name="communication" type="checkbox">
+                                                            <span></span>Enable Time Off
+                                                        </label>
+                                                    </div>
+                                                    <div class="fv-plugins-message-container"></div>
+                                                </div>
+                                            </div>
+                                            <button onclick="accountValidator()" class="btn btn-primary">Next
+                                                Step</button>
+                                            <!--begin::Wizard Actions-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Wizard Step 2-->
+                            </div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                <!--begin::Wizard Step 3-->
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-9">
+                                        <div class="my-5 step" data-wizard-type="step-content">
+                                            <h5 class="mb-10 font-weight-bold text-dark">
+                                                Timesheets
+                                            </h5>
+                                            <!--begin::Group-->
+                                            <div class="form-group">
+                                                <label>Time Rounding</label>
+                                                <select class="form-control form-control-solid" id="time_rnd"
+                                                    id="Select5">
+                                                    <option value="1">None</option>
+                                                    <option value="2">Nearest 5 minutes</option>
+                                                    <option value="3">Nearest 15 minutes</option>
+                                                </select>
+                                            </div>
+                                            <!--end::Group-->
+                                            <div class="form-group fv-plugins-icon-container">
+                                                <label class="checkbox">
+                                                    <input name="communication" type="checkbox">
+                                                    <span></span>Use California 7th Day Overtime Rules
+                                                </label>
+                                            </div>
+                                            <!--end::Group-->
+                                            <!--begin::Group-->
+                                            <div class="form-group">
+                                                <label>Weekly Overtime</label>
+                                                <select class="form-control form-control-solid" id="week_overtime"
+                                                    id="Select6">
+                                                    <option value="1">N/A</option>
+                                                    <option value="2">Over 37.5 hours</option>
+                                                    <option value="3">Over 38 hours</option>
+                                                    <option value="4">Over 40 hours</option>
+                                                    <option value="5">Over 44 hours</option>
+                                                    <option value="6">Over 46 hours</option>
+                                                    <option value="7">Over 48 hours</option>
+                                                    <option value="8">Over 50 hours</option>
+                                                    <option value="9">Over custom number of hours
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <!--end::Group-->
+                                            <!--begin::Row-->
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <!--begin::Group-->
+                                                    <div class="form-group">
+                                                        <label>Daily Overtime</label>
+                                                        <select class="form-control form-control-solid"
+                                                            id="day_overtime" id="Select7">
+                                                            <option value="1">N/A</option>
+                                                            <option value="450">Over 7.5 hours</option>
+                                                            <option value="456">Over 7.6 hours</option>
+                                                            <option value="480">Over 8 hours</option>
+                                                            <option value="600">Over 10 hours</option>
+                                                            <option value="720">Over 12 hours</option>
+                                                            <option value="custom">Over custom number of
+                                                                hours</option>
+                                                        </select> <span class="form-text text-muted">Please enter
+                                                            your Postcode.</span>
+                                                    </div>
+                                                </div>
+                                                <!--end::Group-->
+                                                <!--begin::Group-->
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>Daily Doubletime</label>
+                                                        <select class="form-control form-control-solid" id="day_double"
+                                                            id="Select8">
+                                                            <option value="1">N/A</option>
+                                                            <option value="600">Over 10 hours</option>
+                                                            <option value="720">Over 12 hours</option>
+                                                            <option value="custom">Over custom number of
+                                                                hours</option>
+                                                        </select> <span class="form-text text-muted">Please enter
+                                                            your Postcode.</span>
+                                                    </div>
+                                                </div>
+                                                <!--end::Group-->
+                                            </div>
+                                            <!--end::Row-->
+                                            <!--begin::Row-->
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <div class="form-group">
+                                                        <label>Saturday Overtime Options</label>
+                                                        <select class="form-control form-control-solid"
+                                                            id="sat_overtime" id="Select9">
+                                                            <option value="1" selected="selected">N/A
+                                                            </option>
+                                                            <option value="2">All hours as Overtime
+                                                            </option>
+                                                            <option value="3">All hours as Doubletime
+                                                            </option>
+                                                        </select> <span class="form-text text-muted">Please enter
+                                                            your Postcode.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <!--begin::Group-->
+                                                    <div class="form-group">
+                                                        <label>Sunday Overtime Options</label>
+                                                        <select class="form-control form-control-solid"
+                                                            id="sun_overtime" id="Select10">
+                                                            <option value="1" selected="selected">N/A
+                                                            </option>
+                                                            <option value="2">All hours as Overtime
+                                                            </option>
+                                                            <option value="3">All hours as Doubletime
+                                                            </option>
+                                                        </select> <span class="form-text text-muted">Please enter
+                                                            your Postcode.</span>
+                                                    </div>
+                                                    <!--end::Group-->
+                                                </div>
+                                            </div>
+                                            <!--begin::Group-->
+                                            <div class="form-group">
+                                                <label>Insert Lunch Break Automatically</label>
+                                                <select class="form-control form-control-solid" id="lunch_break_auto"
+                                                    id="Select11">
+                                                    <option value="1" selected="selected">N/A</option>
+                                                    <option value="240">When Day Exceeds 4 Hours
+                                                    </option>
+                                                    <option value="300">When Day Exceeds 5 Hours
+                                                    </option>
+                                                    <option value="360">When Day Exceeds 6 Hours
+                                                    </option>
+                                                    <option value="420">When Day Exceeds 7 Hours
+                                                    </option>
+                                                    <option value="480">When Day Exceeds 8 Hours
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <!--end::Group-->
+                                            <!--begin::Group-->
+                                            <div class="form-group">
+                                                <label>Lunch Break Duration</label>
+                                                <select class="form-control form-control-solid" id="lunch_break"
+                                                    id="Select12">
+                                                    <option value="1" selected="selected">N/A</option>
+                                                    <option value="30">Insert 30 minute break</option>
+                                                    <option value="45">Insert 45 minute break</option>
+                                                    <option value="60">Insert 1 hour break</option>
+                                                    <option value="90">Insert 90 minute break</option>
+                                                </select>
+                                            </div>
+                                            <!--end::Group-->
+                                            <h5 class="mb-10 font-weight-bold text-dark my-3">
+                                                Departments and Locations
+                                            </h5>
+                                            <div class="form-group fv-plugins-icon-container">
+                                                <label class="checkbox">
+                                                    <input name="communication" type="checkbox">
+                                                    <span></span>Enable Departments
+                                                </label>
+                                            </div>
+                                            <!--end::Group-->
+                                            <div class="form-group fv-plugins-icon-container">
+                                                <label class="checkbox">
+                                                    <input name="communication" type="checkbox">
+                                                    <span></span>Enable Locations
+                                                </label>
+                                            </div>
+                                            <!--end::Group-->
+                                            <h5 class="mb-10 font-weight-bold text-dark my-3">
+                                                Departments and Locations
+                                            </h5>
+                                            <div class="form-group fv-plugins-icon-container">
+                                                <label class="checkbox">
+                                                    <input name="communication" type="checkbox">
+                                                    <span></span>Display Scheduled Hours
+                                                </label>
+                                            </div>
+                                            <!--end::Group-->
+                                            <div class="form-group fv-plugins-icon-container">
+                                                <label class="checkbox">
+                                                    <input name="communication" type="checkbox">
+                                                    <span></span>Warn on Overlapping Schedules
+                                                </label>
+                                            </div>
+                                            <!--end::Group-->
+                                            <button onclick="addressValidator()" class="btn btn-primary">Next
+                                                Step</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Wizard Step 3-->
+                            </div>
+                            <div class="tab-pane fade" id="submit" role="tabpanel" aria-labelledby="submit-tab">
+                                <!--begin::Wizard Step 4-->
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-9">
+                                        <div class="my-5 step" data-wizard-type="step-content">
+                                            <h5 class="mb-10 font-weight-bold text-dark">
+                                                Jobs
+                                            </h5>
+                                            <div class="form-group fv-plugins-icon-container">
+                                                <label class="checkbox">
+                                                    <input name="communication" type="checkbox">
+                                                    <span></span>Enable Stages
+                                                </label>
+                                            </div>
+                                            <!--end::Group-->
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Add Stage">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Add Stage">
+                                            </div>
+                                            <h5 class="mt-3 font-weight-bold text-dark">
+                                                Customers
+                                            </h5>
+                                            <div class="form-group fv-plugins-icon-container">
+                                                <label class="checkbox">
+                                                    <input name="communication" type="checkbox">
+                                                    <span></span>Enable Customers
+                                                </label>
+                                            </div>
+                                            <h5 class="mt-3 font-weight-bold text-dark">
+                                                Email Notifications
+                                            </h5>
+                                            <div class="form-group fv-plugins-icon-container">
+                                                <label class="checkbox">
+                                                    <input name="communication" type="checkbox">
+                                                    <span></span>Receive Weekly Summary Email
+                                                </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Weekly Summary Recipients:</label>
+                                                <input type="email" class="form-control" placeholder="Large input">
+                                            </div>
+                                            <div class="form-group fv-plugins-icon-container">
+                                                <label class="checkbox">
+                                                    <input name="communication" type="checkbox">
+                                                    <span></span>Receive Pay Period Reminder Email
+                                                </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Pay Period Reminder Recipients:</label>
+                                                <input type="email" class="form-control" placeholder="Large input">
+                                            </div>
+                                            <button type="button" id="" class="btn btn-primary font-weight-bolder">
+                                                Update Settings
+                                            </button>
+                                        </div>
+                                        <!--end::Wizard Step 4-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--end::Card-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--   Core JS Files   -->
+<script src="js/jquery.3.2.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/companysettings.js"></script>

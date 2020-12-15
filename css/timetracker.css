@@ -1,0 +1,76 @@
+.image-input-wrapper {
+    background-image: url(assets/media/users/100_6.jpg);
+    border: 3px solid #ffffff;
+    -webkit-box-shadow: 0 0.5rem 1.5rem 0.5rem rgba(0, 0, 0, 0.075);
+    box-shadow: 0 0.5rem 1.5rem 0.5rem rgba(0, 0, 0, 0.075);
+    width: 120px;
+    height: 120px;
+    border-radius: 0.42rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.image-input {
+    position: relative;
+    display: inline-block;
+    border-radius: 0.42rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.edit-icon {
+    cursor: pointer;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    height: 24px;
+    width: 24px -webkit-box-shadow: 0px 9px 16px 0px rgba(24, 28, 50, 0.25) !important;
+    box-shadow: 0px 9px 16px 0px rgba(24, 28, 50, 0.25) !important;
+}
+.inputfile {
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden;
+    opacity: 0;
+}
+.btnclose {
+    position: absolute;
+    right: -10px;
+    bottom: -5px;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+}
+.icon-sm {
+    font-size: 0.75rem !important;
+}
+.settingtab .nav-item {
+    margin-bottom: -1px;
+    display: flex;
+    justify-content: space-evenly;
+    width: auto;
+    flex-wrap: wrap;
+    flex: 1;
+}
+.nav-tabs .nav-link {
+    width: 100%;
+    font-weight: bold;
+    margin:0 5px;
+}
+.settingtab .nav-item.show .nav-link, .settingtab .nav-link.active {
+    color: #000;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+    background: #ddd;
+    border-radius: 4px;
+    box-shadow: 2px 6px 15px 0 rgba(69,65,78,.1);
+   
+}
+.settingtab .submenu .nav-link, #home-tab {
+    color: #000;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+    background: #ddd;
+    border-radius: 4px;
+    box-shadow: 2px 6px 15px 0 rgba(69,65,78,.1);
+    
+}

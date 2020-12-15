@@ -1,0 +1,11 @@
+a.disabled {
+  pointer-events: none;
+}
+a.active {
+  background-color: #1572e8 !important;
+  color: #ffffff !important;
+}
+a.non_active {
+  color: black;
+  background-color: #f9fbfd;
+}
