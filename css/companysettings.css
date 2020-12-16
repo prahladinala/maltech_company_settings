@@ -107,3 +107,6 @@ input {
   padding: 0.6rem 1rem;
   height: inherit !important;
 }
+.errorMessage {
+  display: none;
+}

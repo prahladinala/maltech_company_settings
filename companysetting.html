@@ -113,6 +113,8 @@
                                                     <div class="invalid-tooltip">
                                                         Please choose a unique and valid username.
                                                     </div>
+                                                    <small id="cn_error_message" class="errorMessage"
+                                                        style="color: red; ">Enter your company name</small>
                                                     <small class="form-text text-muted">
                                                         If you want your invoices addressed to a
                                                         company.
@@ -128,6 +130,8 @@
                                                 <div class="col-lg-9 col-xl-9">
                                                     <input class="form-control form-control-solid" id="first_name"
                                                         name="firstname" type="text" value="" />
+                                                    <small id="fn_error_message" class="errorMessage"
+                                                        style="color: red; ">Enter your first name</small>
                                                 </div>
                                             </div>
                                             <!--end::Group-->
@@ -138,6 +142,8 @@
                                                 <div class="col-lg-9 col-xl-9">
                                                     <input class="form-control form-control-solid" id="last_name"
                                                         name="lastname" type="text" value="" />
+                                                    <small id="ln_error_message" class="errorMessage"
+                                                        style="color: red; ">Enter your last name</small>
                                                 </div>
                                             </div>
                                             <!--end::Group-->
@@ -150,6 +156,8 @@
 
                                                     <input type="text" class="form-control form-control-solid"
                                                         id="email_addr" name="email" value="" />
+                                                    <small id="email_error_message" class="errorMessage"
+                                                        style="color: red; ">Enter your email address</small>
 
                                                 </div>
                                             </div>
@@ -163,6 +171,8 @@
 
                                                     <input type="text" class="form-control form-control-solid"
                                                         id="phone_num" name="phone" value="" placeholder="Phone" />
+                                                    <small id="phn_error_message" class="errorMessage"
+                                                        style="color: red; ">Enter your Phone number</small>
                                                     <span class="form-text text-muted">Enter valid
                                                         phone number(e.g: 5678967456).</span>
                                                 </div>
@@ -175,8 +185,10 @@
                                                 <div class="col-lg-9 col-xl-9">
 
                                                     <input type="text" class="form-control form-control-solid"
-                                                        id="company_site" name="companywebsite" placeholder="" value=""
-                                                        required />
+                                                        id="company_site" name="companywebsite" placeholder=""
+                                                        value="" />
+                                                    <small id="site_error_message" class="errorMessage"
+                                                        style="color: red; ">Enter your company site</small>
 
                                                 </div>
                                             </div>
@@ -660,7 +672,7 @@
                                                 <div class="col-xl-9 col-lg-9">
                                                     <select class="form-control form-control-solid" id="sel_period"
                                                         id="Select4 ">
-                                                        <option value="1">N/A</option>
+                                                        <option value="0">N/A</option>
                                                         <option value="2">Weekly</option>
                                                         <option value="3">Bi-Weekly (e.g. Sunday,
                                                             December 6th - Saturday, December 19th)
@@ -672,10 +684,14 @@
                                                         <option value="6">Semi-Monthly (1st - 15th &amp;
                                                             16th - End of Month)</option>
                                                     </select>
+                                                    <small id="pay_error_message" class="errorMessage"
+                                                        style="color: red; ">Select something
+                                                        from
+                                                        dropdown</small>
                                                 </div>
                                             </div>
                                             <!--end::Group-->
-                                            <div class="form-group row fv-plugins-icon-container">
+                                            <div class=" form-group row fv-plugins-icon-container">
                                                 <label class="col-form-label col-xl-3 col-lg-3">Approvals</label>
                                                 <div class="col-xl-9 col-lg-9 col-form-label">
                                                     <div class="checkbox-inline">
