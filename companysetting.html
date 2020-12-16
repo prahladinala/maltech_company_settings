@@ -110,6 +110,9 @@
                                                 <div class="col-lg-9 col-xl-9">
                                                     <input class="form-control form-control-solid" id="company_name"
                                                         name="companyname" type="text" value="" />
+                                                    <div class="invalid-tooltip">
+                                                        Please choose a unique and valid username.
+                                                    </div>
                                                     <small class="form-text text-muted">
                                                         If you want your invoices addressed to a
                                                         company.
@@ -172,15 +175,15 @@
                                                 <div class="col-lg-9 col-xl-9">
 
                                                     <input type="text" class="form-control form-control-solid"
-                                                        id="company_site" name="companywebsite" placeholder=""
-                                                        value="" />
+                                                        id="company_site" name="companywebsite" placeholder="" value=""
+                                                        required />
 
                                                 </div>
                                             </div>
                                             <!--end::Group-->
                                             <button onclick="profileValidator()" class="btn btn-primary">Next
                                                 Step</button>
-
+                                            <button class="btn btn-warning" type="submit">Next Button</button>
                                         </div>
                                     </div>
                                     <!--end::Wizard Step 1-->
