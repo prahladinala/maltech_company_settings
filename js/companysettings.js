@@ -1,30 +1,25 @@
-function profileValidator() {
-  const company_name_input = document.getElementById("company_name");
-  const first_name_input = document.getElementById("first_name");
-  const last_name_input = document.getElementById("last_name");
-  const email_addr_input = document.getElementById("email_addr");
-  const phone_num_input = document.getElementById("phone_num");
-  const company_site_input = document.getElementById("company_site");
+const company_name_input = document.getElementById("company_name");
+const first_name_input = document.getElementById("first_name");
+const last_name_input = document.getElementById("last_name");
+const email_addr_input = document.getElementById("email_addr");
+const phone_num_input = document.getElementById("phone_num");
+const company_site_input = document.getElementById("company_site");
 
+const company_name = document.getElementById("company_name").value.trim();
+const first_name = document.getElementById("first_name").value.trim();
+const last_name = document.getElementById("last_name").value.trim();
+const email_addr = document.getElementById("email_addr").value.trim();
+const phone_num = document.getElementById("phone_num").value.trim();
+const company_site = document.getElementById("company_site").value.trim();
+
+function profileValidator() {
   const company_name_err = document.getElementById("cn_error_message");
   const first_name_err = document.getElementById("fn_error_message");
   const last_name_err = document.getElementById("ln_error_message");
   const email_addr_err = document.getElementById("email_error_message");
   const phone_num_err = document.getElementById("phn_error_message");
   const company_site_err = document.getElementById("site_error_message");
-
-  const company_name = document.getElementById("company_name").value;
-  const first_name = document.getElementById("first_name").value;
-  const last_name = document.getElementById("last_name").value;
-  const email_addr = document.getElementById("email_addr").value;
-  const phone_num = document.getElementById("phone_num").value;
-  const company_site = document.getElementById("company_site").value;
-
-  const home_link = document.getElementById("home-tab");
-  const account_link = document.getElementById("profile-tab");
-  const address_link = document.getElementById("contact-tab");
-  const submission_link = document.getElementById("submit-tab");
-
+  
   if (company_name == null || company_name == "") {
     company_name_input.setAttribute("class", "invalid");
     company_name_err.classList.remove("errorMessage");
