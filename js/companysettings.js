@@ -5,43 +5,29 @@ const email_addr_input = document.getElementById("email_addr");
 const phone_num_input = document.getElementById("phone_num");
 const company_site_input = document.getElementById("company_site");
 
-const company_name = document.getElementById("company_name").value.trim();
-const first_name = document.getElementById("first_name").value.trim();
-const last_name = document.getElementById("last_name").value.trim();
-const email_addr = document.getElementById("email_addr").value.trim();
-const phone_num = document.getElementById("phone_num").value.trim();
-const company_site = document.getElementById("company_site").value.trim();
-
 function ValidateEmail() {
-  // var uemail = document.registration.email;
   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   if (email_addr.match(mailformat)) {
-    alert("mail Correct");
-    return true;
+    email_addr_input.setAttribute("class", "invalid");
+    email_addr_err.classList.remove("errorMessage");
   } else {
-    alert("You have entered an invalid email address!");
-    // uemail.focus();
-    return false;
+    email_addr_input.classList.remove("invalid");
+    email_addr_err.setAttribute("class", "errorMessage");
   }
 }
-// function companyNameValidation() {
-//   company_name_input.setAttribute("class", "invalid");
-//   company_name_err.classList.remove("errorMessage");
-// }
-// function firstNameValidation() {
-//   first_name_input.setAttribute("class", "invalid");
-//   first_name_err.classList.remove("errorMessage");
-// }
-// function lastNameValidation() {
-//   last_name_input.setAttribute("class", "invalid");
-//   last_name_err.classList.remove("errorMessage");
-// }
-// function emailValidation() {
-//   ValidateEmail();
-//   email_addr_input.setAttribute("class", "invalid");
-//   email_addr_err.classList.remove("errorMessage");
-// }
+
 function profileValidator() {
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  var phoneformat = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/;
+  var urlformat = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
+
+  const company_name = document.getElementById("company_name").value;
+  const first_name = document.getElementById("first_name").value;
+  const last_name = document.getElementById("last_name").value;
+  const email_addr = document.getElementById("email_addr").value;
+  const phone_num = document.getElementById("phone_num").value;
+  const company_site = document.getElementById("company_site").value;
+
   const company_name_err = document.getElementById("cn_error_message");
   const first_name_err = document.getElementById("fn_error_message");
   const last_name_err = document.getElementById("ln_error_message");
@@ -52,48 +38,48 @@ function profileValidator() {
   if (company_name == null || company_name == "") {
     company_name_input.setAttribute("class", "invalid");
     company_name_err.classList.remove("errorMessage");
-    if (first_name == null || first_name == "") {
-      first_name_input.setAttribute("class", "invalid");
-      first_name_err.classList.remove("errorMessage");
-      if (last_name == null || last_name == "") {
-        last_name_input.setAttribute("class", "invalid");
-        last_name_err.classList.remove("errorMessage");
-        if (email_addr == null || email_addr == "") {
-          ValidateEmail();
-          email_addr_input.setAttribute("class", "invalid");
-          email_addr_err.classList.remove("errorMessage");
-          if (company_site == null || company_site == "") {
-            company_site_input.setAttribute("class", "invalid");
-            company_site_err.classList.remove("errorMessage");
-            if (phone_num == null || phone_num == "") {
-              phone_num_input.setAttribute("class", "invalid");
-              phone_num_err.classList.remove("errorMessage");
-            } else {
-              phone_num_input.classList.remove("invalid");
-              phone_num_err.setAttribute("class", "errorMessage");
-            }
-          } else {
-            company_site_input.classList.remove("invalid");
-            company_site_err.setAttribute("class", "errorMessage");
-          }
-        }
-      }
-    }
   } else {
-    // alert("Success");
     company_name_input.classList.remove("invalid");
-    first_name_input.classList.remove("invalid");
-    last_name_input.classList.remove("invalid");
-    email_addr_input.classList.remove("invalid");
-    company_site_input.classList.remove("invalid");
-    phone_num_input.classList.remove("invalid");
-
     company_name_err.setAttribute("class", "errorMessage");
+  }
+
+  if (first_name == null || first_name == "") {
+    first_name_input.setAttribute("class", "invalid");
+    first_name_err.classList.remove("errorMessage");
+  } else {
+    first_name_input.classList.remove("invalid");
     first_name_err.setAttribute("class", "errorMessage");
+  }
+
+  if (last_name == null || last_name == "") {
+    last_name_input.setAttribute("class", "invalid");
+    last_name_err.classList.remove("errorMessage");
+  } else {
+    last_name_input.classList.remove("invalid");
     last_name_err.setAttribute("class", "errorMessage");
+  }
+
+  if (email_addr.match(mailformat)) {
+    email_addr_input.classList.remove("invalid");
     email_addr_err.setAttribute("class", "errorMessage");
+  } else {
+    email_addr_input.setAttribute("class", "invalid");
+    email_addr_err.classList.remove("errorMessage");
+  }
+
+  if (company_site.match(urlformat)) {
+    company_site_input.classList.remove("invalid");
     company_site_err.setAttribute("class", "errorMessage");
+  } else {
+    company_site_input.setAttribute("class", "invalid");
+    company_site_err.classList.remove("errorMessage");
+  }
+  if (phone_num.match(phoneformat)) {
+    phone_num_input.classList.remove("invalid");
     phone_num_err.setAttribute("class", "errorMessage");
+  } else {
+    phone_num_input.setAttribute("class", "invalid");
+    phone_num_err.classList.remove("errorMessage");
   }
 }
 
